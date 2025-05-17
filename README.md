@@ -1,1 +1,1 @@
-# meal-log-project
+# Meal Logs

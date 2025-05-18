@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #4ADE80;
+  --primary-hover: #22c55e;
+  --secondary: #FB923C;
+  --accent-light: #f0fdf4;
+  --accent-medium: #dcfce7;
+  --accent-dark: #bbf7d0;
+  --neutral-light: #f8fafc;
+  --neutral-medium: #f1f5f9;
+  --neutral-dark: #e2e8f0;
 }
 
 @theme inline {
@@ -12,15 +21,63 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Removing dark mode media query to maintain light theme across all pages */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* Enhanced sidebar navigation styling */
+.sidebar-nav-item {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.sidebar-nav-item:hover {
+  background-color: var(--primary-hover);
+  color: white;
+  transform: translateX(4px);
+}
+
+.sidebar-nav-item.active {
+  background-color: var(--accent-medium);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Card styling */
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
 }
